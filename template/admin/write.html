@@ -1,0 +1,45 @@
+{% set title = "제품 등록" %}
+{% extends "layout/base.html" %}
+
+{% block content -%}
+    <form action="" method="post">
+        <table class="table table-bordered">
+            <tr>
+                <th>category</th>
+                <td><input type="text" name="category" class="form-control"
+                value="{{product.category}}"/></td>
+            </tr>
+            <tr>
+                <th>name</th>
+                <td><input type="text" name="name" class="form-control"
+                value="{{product.name}}"/></td>
+            </tr>
+            <tr>
+                <th>provider_id</th>
+                <td><input type="text" name="provider_id" class="form-control"
+                value="{{product.provider_id}}"/></td>
+            </tr>
+            <tr>
+                <th>retail_price</th>
+                <td><input type="text" name="retail_price" class="form-control"
+                value="{{product.retail_price}}"/></td>
+            </tr>
+            <tr>
+                <th>location</th>
+                <td><input type="text" name="location" class="form-control"
+                value="{{product.location}}"/></td>
+            </tr>
+            <tr>
+                <th>description</th>
+                <td><input type="text" name="description" class="form-control"
+                value="{{product.description}}"/></td>
+            </tr>
+            <tr>
+                <th>img_path</th>
+                <td><input type="text" name="img_path" class="form-control"
+                value="{{product.img_path}}"/></td>
+            </tr>
+        </table>
+        <button class="btn btn-primary">작성하기</button>
+    </form>
+{% endblock %} 

@@ -1,0 +1,21 @@
+{% set title = "제품 등록" %}
+{% extends "layout/base.html" %}
+
+{% block content -%}
+    <form action="" method="post">
+        <table class="table table-bordered">
+            <tr>
+                <th>quantity</th>
+                <td><input type="text" name="quantity" class="form-control"
+                value="{{inventory.quantity}}"/></td>
+            </tr>
+            <tr>
+                <th>product_id</th>
+                <td><input type="text" name="product_id" class="form-control"
+                value="{{inventory.product_id}}"/></td>
+            </tr>
+            
+        </table>
+        <button class="btn btn-primary">작성하기</button>
+    </form>
+{% endblock %} 

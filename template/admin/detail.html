@@ -1,0 +1,94 @@
+{% set title = "관리자 : 상세페이지" %}
+{% extends "layout/base.html" %}
+
+{% block content -%}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        {{ product.name }}
+    </div>
+    <div class="panel-body">
+        <div style="padding-bottom: 10px">
+            <table class="table">
+            <tr>
+                <td>Category</td>
+                <td>{{ product.category }}</td>
+            </tr>
+            <tr>
+                <td>name</td>
+                <td>{{ product.name }}</td>
+            </tr>
+            <tr>
+                <td>retail_price</td>
+                <td>{{ product.retail_price }}</td>
+            </tr>
+            <tr>
+                <td>location</td>
+                <td>{{ product.location }}</td>
+            </tr>
+            <tr>
+                <td>description</td>
+                <td>{{ product.description }}</td>
+            </tr>
+            <tr>
+                <td>img_path</td>
+                <td>{{ product.img_path }}</td>
+            </tr>
+            <tr>
+                <td>createdAt</td>
+                <td>{{ product.createdAt }}</td>
+            </tr>
+            <tr>
+                <td>updatedAt</td>
+                <td>{{ product.updatedAt }}</td>
+            </tr>
+            <tr>
+                <td>provider_id</td>
+                <td>{{ product.provider_id }}</td>
+            </tr>
+            <tr>
+                <td>sku</td>
+                <td>{{ product.sku }}</td>
+            </tr>
+            <tr>
+                <td>name_eng</td>
+                <td>{{ product.name_eng }}</td>
+            </tr>
+            <tr>
+                <td>type</td>
+                <td>{{ product.type }}</td>
+            </tr>
+            <tr>
+                <td>intro</td>
+                <td>{{ product.intro }}</td>
+            </tr>
+            <tr>
+                <td>measure_1</td>
+                <td>{{ product.measure_1 }}</td>
+            </tr>
+            <tr>
+                <td>measure_2</td>
+                <td>{{ product.measure_2 }}</td>
+            </tr>
+            <tr>
+                <td>storage_desc</td>
+                <td>{{ product.storage_desc }}</td>
+            </tr>
+            <tr>
+                <td>recipe</td>
+                <td>{{ product.recipe }}</td>
+            </tr>
+            <tr>
+                <td>nutrition</td>
+                <td>{{ product.nutrition }}</td>
+            </tr>
+        </table>
+        </div>
+    </div>
+</div>
+
+<a href="/admin/admin_products" class="btn btn-default">목록으로</a>
+<a href="/admin/admin_products/edit/{{ product.product_id }}" class="btn btn-primary">수정</a>
+
+
+
+{% endblock %}

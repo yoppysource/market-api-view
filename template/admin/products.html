@@ -1,0 +1,65 @@
+{% set title = "관리자 리스트" %}
+{% extends "layout/base.html" %}
+
+{% block content -%}
+    <table class="table table-bordered table-hover" width="120%" cellspacing="0">
+        <tr>
+            <th>product_id</th>
+            <th>category</th>
+            <th>name</th>
+            <th>retail_price</th>
+            <th>location</th>
+            <th>description</th>            
+            <th>img_path</th>
+            <th>createdAt</th>
+            <th>updatedAt</th>
+            <th>provider_id</th>
+            <th>sku</th>
+            <th>name_eng</th>
+            <th>type</th>
+            <th>intro</th>
+            <th>measure_1</th>
+            <th>measure_2</th>
+            <th>storage_desc</th>
+            <th>recipe</th>
+            <th>nutrition</th>
+            <th>description_img_path</th>
+            <th></th>
+        </tr>
+
+        {% for product in products %}
+        <tr>
+            <td style="word-break:break-all;" height="auto">
+                <a href="/admin/admin_products/detail/{{  product.product_id }}">
+                    {{ product.product_id }}</a>
+            </td>
+            <td style="word-break:break-all;" height="auto"> {{ product.category }}</td>
+            <td style="word-break:break-all;" height="auto"> {{ product.name }}</td>
+            <td style="word-break:break-all;" height="auto"> {{ product.retail_price }}</td>
+            <td style="word-break:break-all;" height="auto"> {{ product.location }}</td>
+            <td style="word-break:break-all;" height="auto"> {{ product.description }}</td>
+            <td style="word-break:break-all;" height="auto"> {{ product.img_path }}</td>
+            <td style="word-break:break-all;" height="auto"> {{ product.createdAt }}</td>
+            <td style="word-break:break-all;" height="auto"> {{ product.updatedAt }}</td>
+            <td style="word-break:break-all;" height="auto"> {{ product.provider_id }}</td>
+            <td style="word-break:break-all;" height="auto"> {{ product.sku }}</td>
+            <td style="word-break:break-all;" height="auto"> {{ product.name_eng }}</td>
+            <td style="word-break:break-all;" height="auto"> {{ product.type }}</td>
+            <td style="word-break:break-all;" height="auto"> {{ product.intro }}</td>
+            <td style="word-break:break-all;" height="auto"> {{ product.measure_1 }}</td>
+            <td style="word-break:break-all;" height="auto"> {{ product.measure_2 }}</td>
+            <td style="word-break:break-all;" height="auto"> {{ product.storage_desc }}</td>
+            <td style="word-break:break-all;" height="auto"> {{ product.recipe }}</td>
+            <td style="word-break:break-all;" height="auto"> {{ product.nutrition }}</td>
+            <td style="word-break:break-all;" height="auto"> {{ product.description_img_path }}</td>
+            <td style="word-break:break-all;" height="auto">
+                <a href="/admin/admin_products/delete/{{product.product_id}}" 
+                class="btn btn-danger" onclick="return confirm('삭제하시겠습니까?')">삭제</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/admin/admin_products_write" class="btn btn-default">작성하기</a>
+
+{% endblock %} 

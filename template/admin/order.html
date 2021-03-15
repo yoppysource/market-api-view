@@ -1,0 +1,33 @@
+{% set title = "관리자 리스트" %}
+{% extends "layout/base.html" %}
+
+{% block content -%}
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>상세보기</th>
+            <th>주문번호</th>
+            <th>고객이름</th>
+            <th>주문가격</th>
+            <th>상태</th>
+        </tr>
+
+        {% for order in orders %}
+        <tr>
+            <td>
+                <a href="/admin/orders/detail/{{  order.order_id }}">주문상세</a>
+            </td>
+            <td> {{ order.order_id }}</td>
+            <td> {{ order.customer_id }}</td>
+            <td> {{ order.totalprice }}</td>
+            <td> {{ order.status }}</td>
+            <td>
+                <a href="/admin/products/delete/{{order.id}}" 
+                class="btn btn-danger" onclick="return confirm('삭제하시겠습니까?')">삭제</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/admin/products/write" class="btn btn-default">작성하기</a>
+
+{% endblock %} 

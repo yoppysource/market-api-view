@@ -1,0 +1,47 @@
+{% set title = "관리자 리스트" %}
+{% extends "layout/base.html" %}
+
+{% block content -%}
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>customer_id</th>
+            <th>이름</th>
+            <th>비밀번호</th>
+            <th>email</th>
+            <th>생년월일</th>
+            <th>전화번호</th>
+            <th>주소</th>
+            <th>상세주소</th>
+            <th>가입일</th>
+            <th>SNS ID</th>
+            <th>우편번호</th>
+            <th></th>
+        </tr>
+        
+        {% for customer in customers %}
+        <tr>
+            
+            <td><a href="/admin/admin_customers/detail/{{  customer.customer_id }}">
+                {{ customer.customer_id }}
+            </a></td>
+            <td>{{ customer.name }}</td>
+            <td>{{ customer.password }}</td>
+            <td>{{ customer.email }}</td>
+            <td>{{ customer.birthdate }}</td>
+            <td>{{ customer.phone }}</td>
+            <td>{{ customer.address }}</td>
+            <td>{{ customer.detailed_address }}</td>
+            <td>{{ customer.createdate }}</td>
+            <td>{{ customer.sns_id }}</td>
+            <td>{{ customer.post_code }}</td>
+            <td>
+                <a href="/admin/admin_customers/delete/{{customer.customer_id}}" 
+                class="btn btn-danger" onclick="return confirm('삭제하시겠습니까?')">삭제</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/admin/admin_customers_write" class="btn btn-default">작성하기</a>
+
+{% endblock %} 

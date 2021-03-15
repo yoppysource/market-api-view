@@ -1,0 +1,61 @@
+{% set title = "제품 등록" %}
+{% extends "layout/base.html" %}
+
+{% block content -%}
+    <form action="" method="post">
+        <table class="table table-bordered">
+            <tr>
+                <th>name</th>
+                <td><input type="text" name="name" class="form-control"
+                value="{{customers.name}}"/></td>
+            </tr>
+            <tr>
+                <th>password</th>
+                <td><input type="text" name="password" class="form-control"
+                value="{{customers.password}}"/></td>
+            </tr>
+            <tr>
+                <th>email</th>
+                <td><input type="text" name="email" class="form-control"
+                value="{{customers.email}}"/></td>
+            </tr>
+            <tr>
+                <th>birthdate</th>
+                <td><input type="text" name="birthdate" class="form-control"
+                value="{{customers.birthdate}}"/></td>
+            </tr>
+            <tr>
+                <th>phone</th>
+                <td><input type="text" name="phone" class="form-control"
+                value="{{customers.phone}}"/></td>
+            </tr>
+            <tr>
+                <th>address</th>
+                <td><input type="text" name="address" class="form-control"
+                value="{{customers.address}}"/></td>
+            </tr>
+            <tr>
+                <th>detailed_address</th>
+                <td><input type="text" name="detailed_address" class="form-control"
+                value="{{customers.detailed_address}}"/></td>
+            </tr>
+            <tr>
+                <th>createdate</th>
+                <td><input type="text" name="createdate" class="form-control"
+                value="{{customers.createdate}}"/></td>
+            </tr>
+            <tr>
+                <th>sns_id</th>
+                <td><input type="text" name="sns_id" class="form-control"
+                value="{{customers.sns_id}}"/></td>
+            </tr>
+            <tr>
+                <th>post_code</th>
+                <td><input type="text" name="post_code" class="form-control"
+                value="{{customers.post_code}}"/></td>
+            </tr>
+            
+        </table>
+        <button class="btn btn-primary">작성하기</button>
+    </form>
+{% endblock %} 

@@ -1,0 +1,33 @@
+{% set title = "관리자 리스트" %}
+{% extends "layout/base.html" %}
+
+{% block content -%}
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>inventory id</th>
+            <th>qunatity</th>
+            <th>product id</th>
+            <th>product name</th>
+            <th></th>
+        </tr>
+        
+        {% for inventory in inventories %}
+        <tr>
+            
+            <td><a href="/admin/admin_inventories/detail/{{  inventory.inventory_id }}">
+                {{ inventory.inventory_id }}
+            </a></td>
+            <td>{{ inventory.quantity }}</td>
+            <td>{{ inventory.product_id }}</td>
+            <td>{{ inventory.product.name }}</td>
+            <td>
+                <a href="/admin/admin_inventories/delete/{{inventory.inventory_id}}" 
+                class="btn btn-danger" onclick="return confirm('삭제하시겠습니까?')">삭제</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/admin/admin_inventories_write" class="btn btn-default">작성하기</a>
+
+{% endblock %} 

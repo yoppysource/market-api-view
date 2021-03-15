@@ -1,0 +1,105 @@
+{% set title = "제품 등록" %}
+{% extends "layout/base.html" %}
+
+{% block content -%}
+    <form action="" method="post">
+        <table class="table table-bordered">
+            <tr>
+                <th>category</th>
+                <td><input type="text" name="category" class="form-control"
+                value="{{product.category}}"/></td>
+            </tr>
+            <tr>
+                <th>name</th>
+                <td><input type="text" name="name" class="form-control"
+                value="{{product.name}}"/></td>
+            </tr>
+            <tr>
+                <th>retail_price</th>
+                <td><input type="text" name="retail_price" class="form-control"
+                value="{{product.retail_price}}"/></td>
+            </tr>
+            <tr>
+                <th>location</th>
+                <td><input type="text" name="location" class="form-control"
+                value="{{product.location}}"/></td>
+            </tr>
+            <tr>
+                <th>description</th>
+                <td><input type="text" name="description" class="form-control"
+                value="{{product.description}}"/></td>
+            </tr>
+            <tr>
+                <th>img_path</th>
+                <td><input type="text" name="img_path" class="form-control"
+                value="{{product.img_path}}"/></td>
+            </tr>
+            <tr>
+                <th>createdAt</th>
+                <td><input type="text" name="createdAt" class="form-control"
+                value="{{product.createdAt}}"/></td>
+            </tr>
+            <tr>
+                <th>updatedAt</th>
+                <td><input type="text" name="updatedAt" class="form-control"
+                value="{{product.updatedAt}}"/></td>
+            </tr>
+            <tr>
+                <th>provider_id</th>
+                <td><input type="text" name="provider_id" class="form-control"
+                value="{{product.provider_id}}"/></td>
+            </tr>
+            <tr>
+                <th>sku</th>
+                <td><input type="text" name="sku" class="form-control"
+                value="{{product.sku}}"/></td>
+            </tr>
+            <tr>
+                <th>name_eng</th>
+                <td><input type="text" name="name_eng" class="form-control"
+                value="{{product.name_eng}}"/></td>
+            </tr>
+            <tr>
+                <th>type</th>
+                <td><input type="text" name="type" class="form-control"
+                value="{{product.type}}"/></td>
+            </tr>
+            <tr>
+                <th>intro</th>
+                <td><input type="text" name="intro" class="form-control"
+                value="{{product.intro}}"/></td>
+            </tr>
+            <tr>
+                <th>measure_1</th>
+                <td><input type="text" name="measure_1" class="form-control"
+                value="{{product.measure_1}}"/></td>
+            </tr>
+            <tr>
+                <th>measure_2</th>
+                <td><input type="text" name="measure_2" class="form-control"
+                value="{{product.measure_2}}"/></td>
+            </tr>
+            <tr>
+                <th>storage_desc</th>
+                <td><input type="text" name="storage_desc" class="form-control"
+                value="{{product.storage_desc}}"/></td>
+            </tr>
+            <tr>
+                <th>recipe</th>
+                <td><input type="text" name="recipe" class="form-control"
+                value="{{product.recipe}}"/></td>
+            </tr>
+            <tr>
+                <th>nutrition</th>
+                <td><input type="text" name="nutrition" class="form-control"
+                value="{{product.nutrition}}"/></td>
+            </tr>
+            <tr>
+                <th>description_img_path</th>
+                <td><input type="text" name="nutrition" class="form-control"
+                value="{{product.description_img_path}}"/></td>
+            </tr>
+        </table>
+        <button class="btn btn-primary">작성하기</button>
+    </form>
+{% endblock %} 

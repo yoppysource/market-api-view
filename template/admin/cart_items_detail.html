@@ -1,0 +1,25 @@
+{% set title = "관리자 : 상세페이지" %}
+{% extends "layout/base.html" %}
+ 
+{% block content -%}
+    <div class="panel panel-default">
+        
+        {% for cart_item in cart_items %}
+        <div class="panel-heading">
+            cart ID : {{ cart_item.cart_item_id }}
+        </div>
+        <div class="panel-body">
+            <div style="padding-bottom: 10px">
+                수량 : {{ cart_item.quantity }}
+            </div>
+            <div style="padding-bottom: 10px">
+                제품명 : {{ cart_item.product.name }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+
+
+
+{% endblock %}

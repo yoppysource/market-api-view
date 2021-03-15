@@ -1,0 +1,30 @@
+{% set title = "관리자 : 상세페이지" %}
+{% extends "layout/base.html" %}
+ 
+{% block content -%}
+    <div class="panel panel-default">
+        
+        {% for order_detail in order_details %}
+        <div class="panel-heading">
+            order ID : {{ order_detail.order_id }}
+        </div>
+        <div class="panel-body">
+            <div style="padding-bottom: 10px">
+                제품 ID : {{ order_detail.product_id }}
+            </div>
+            <div style="padding-bottom: 10px">
+                수량 : {{ order_detail.quantity }}
+            </div>
+            <div style="padding-bottom: 10px">
+                주문날짜 : {{ order_detail.createdAt }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <a href="/admin/products" class="btn btn-default">목록으로</a>
+    <a href="/admin/products/edit/{{ product.id }}" class="btn btn-primary">수정</a>
+
+
+
+{% endblock %}

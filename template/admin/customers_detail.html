@@ -1,0 +1,71 @@
+{% set title = "관리자 : 상세페이지" %}
+{% extends "layout/base.html" %}
+
+{% block content -%}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        {{ customers.name }}
+    </div>
+    <div class="panel-body">
+        <div style="padding-bottom: 10px">
+            <table class="table">
+            <tr>
+                <td>name</td>
+                <td>{{ customers.name }}</td>
+            </tr>
+            <tr>
+                <td>password</td>
+                <td>{{ customers.password }}</td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td>{{ customers.email }}</td>
+            </tr>
+            <tr>
+                <td>birthdate</td>
+                <td>{{ customers.birthdate }}</td>
+            </tr>
+            <tr>
+                <td>phone</td>
+                <td>{{ customers.phone }}</td>
+            </tr>
+            <tr>
+                <td>address</td>
+                <td>{{ customers.address }}</td>
+            </tr>
+            <tr>
+                <td>createdate</td>
+                <td>{{ customers.createdate }}</td>
+            </tr>
+            <tr>
+                <td>sns_id</td>
+                <td>{{ customers.sns_id }}</td>
+            </tr>
+            <tr>
+                <td>post_code</td>
+                <td>{{ customers.post_code }}</td>
+            </tr>
+            <tr>
+                <td>detailed_address</td>
+                <td>{{ customers.detailed_address }}</td>
+            </tr>
+            <tr>
+                <td>createAt</td>
+                <td>{{ customers.createdAt }}</td>
+            </tr>
+
+            <tr>
+                <td>updateAt</td>
+                <td>{{ customers.updatedAt }}</td>
+            </tr>
+        </table>
+        </div>
+    </div>
+</div>
+
+<a href="/admin/admin_customers" class="btn btn-default">목록으로</a>
+<a href="/admin/admin_customers/edit/{{ customers.customer_id }}" class="btn btn-primary">수정</a>
+
+
+
+{% endblock %}
