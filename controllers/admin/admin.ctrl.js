@@ -1790,26 +1790,28 @@ exports.get_inventories_product = (req, res) => {
     });
 };
 
-exports.get_coupon_customer = (req, res) => {
-  models.coupons
-    .findAll({
+exports.get_coupon_customer = async (req, res) => {
+  try {
+    var now = new Date();
+
+    let result = await models.coupons.findAll({
       where: {
         customer_id: req.params.id,
         used: 0,
       },
-    })
-    .then((result) => {
-      res.json({
-        message: "success",
-        result,
-      });
-    })
-    .catch((err) => {
-      console.error(err);
-      res.json({
-        message: "fail",
-      });
     });
+
+    result = result.filter((el) => el.expire_date > now);
+
+    res.json({
+      message: "success",
+      result,
+    });
+  } catch (error) {
+    res.json({
+      message: "fail",
+    });
+  }
 };
 
 // coupons
@@ -2561,11 +2563,13 @@ exports.post_login = async (req, res) => {
       });
     } else {
       const newCustomer = await models.customers.create(req.body);
+      var now = new Date();
+      var oneMonthLater = new Date(now.setMonth(now.getMonth() + 1));
       await models.coupons.create({
         customer_id: newCustomer.customer_id,
         type: 1,
         value: 10000.0,
-        expire_date: "2021/4/30",
+        expire_date: oneMonthLater,
         coupon_num: `${newCustomer.customer_id}${Date.now()}`,
         description: "가입 축하 쿠폰입니다.",
         used: 0,
