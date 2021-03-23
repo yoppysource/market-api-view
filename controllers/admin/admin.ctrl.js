@@ -10,6 +10,35 @@ const secretObj = process.env.JWT_SECRET;
 // customers table
 function verify_token(req, res) {}
 
+exports.get_farm_sensors = async (req, res) => {
+  try {
+    const result = await models.farm_sensors.findAll({});
+    res.json({
+      message: "success",
+      result,
+    });
+  } catch (error) {
+    console.error(err);
+    res.json({
+      message: "fail",
+    });
+  }
+};
+
+exports.post_farm_sensors = async (req, res) => {
+  try {
+    const result = await models.farm_sensors.create(req.body);
+    res.json({
+      message: "success",
+      result,
+    });
+  } catch (error) {
+    console.log(error);
+    res.json({
+      message: "fail",
+    });
+  }
+};
 exports.get_customers = (req, res) => {
   models.customers
     .findAll({})

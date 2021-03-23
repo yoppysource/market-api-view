@@ -1,6 +1,6 @@
-const { Router } = require('express');
-const router = Router()
+const { Router } = require("express");
+const router = Router();
 
-router.use('/admin', require('./admin'));
+router.use("/admin", require("./admin"));
 
-module.exports = router; 
+module.exports = router;

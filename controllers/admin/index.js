@@ -27,6 +27,12 @@ function verify_token(req, res, next) {
 // router.get('/', verify_token, testMiddleWare2, (req, res) => {
 //     res.send('admin app');
 // });
+//
+
+router
+  .route("/farm_sensors")
+  .get(ctrl.get_farm_sensors)
+  .post(ctrl.post_farm_sensors);
 
 //image 전송
 router.get("/img", ctrl.get_img);
