@@ -855,21 +855,26 @@ exports.get_purchases_customer = (req, res) => {
 };
 
 // products table
-exports.get_products = (_, res) => {
-  models.products
-    .findAll({})
-    .then((result) => {
-      res.json({
-        message: "success",
-        result,
-      });
-    })
-    .catch((err) => {
-      console.error(err);
-      res.json({
-        message: "fail",
-      });
-    }); // 이곳으로 productList보내기
+exports.get_products = async (req, res) => {
+  try {
+    const result = await models.inventories.findAll({
+      include: [
+        {
+          model: models.products,
+        },
+      ],
+    });
+
+    res.json({
+      message: "success",
+      result,
+    });
+  } catch (error) {
+    console.error(err);
+    res.json({
+      message: "fail",
+    });
+  }
 };
 
 exports.post_products = (req, res) => {
