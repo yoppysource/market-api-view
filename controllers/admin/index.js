@@ -34,6 +34,8 @@ router
   .get(ctrl.get_farm_sensors)
   .post(ctrl.post_farm_sensors);
 
+router.route("/farm_sensors/var8/:id").get(ctrl.get_senser_data_by_var8);
+
 //image 전송
 router.get("/img", ctrl.get_img);
 
